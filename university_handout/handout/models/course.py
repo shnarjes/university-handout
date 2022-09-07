@@ -14,8 +14,8 @@ class Course(models.Model):
         _('Logo'), upload_to='storage/logo', null=True, blank=True)
 
     class Meta:
-        verbose_name = _('Course')
-        verbose_name_plural = _('Courses')
+        verbose_name = _('course')
+        verbose_name_plural = _('courses')
         unique_together = (
             'minor',
             'title'

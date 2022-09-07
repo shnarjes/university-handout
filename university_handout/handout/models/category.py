@@ -8,8 +8,8 @@ class Category(models.Model):
         _('Logo'), upload_to='storage/logo', null=True, blank=True)
 
     class Meta:
-        verbose_name = _('Category')
-        verbose_name_plural = _('Categories')
+        verbose_name = _('category')
+        verbose_name_plural = _('categorys')
         ordering = ('title',)
 
     def __str__(self):

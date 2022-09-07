@@ -23,7 +23,7 @@ def send_sms_otp(mobile, token):
             'token': token,
             'type': 'sms',  # sms vs call
         }
-        response = api.verify_lookup(params)
+        api.verify_lookup(params)
 
     except APIException as e:
         print(e.args[0].decode("utf-8"))

@@ -12,6 +12,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django.middleware.locale.LocaleMiddleware',
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -33,7 +39,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'libraries': {# Adding this section should work around the issue.
+            'libraries': {  # Adding this section should work around the issue.
                 'staticfiles': 'django.templatetags.static',
             },
         },
@@ -68,6 +74,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LANGUAGE_CODE = 'fa'
+
+LANGUAGES = ( ('fa', 'Farsi'), ('en', 'English') )
+
+body = gettext_lazy("I \u2764 Django")  # (Unicode :heart:)
+requests.post('https://example.com/send', data={'body': body})
 
 ################
 #    STATIC    #

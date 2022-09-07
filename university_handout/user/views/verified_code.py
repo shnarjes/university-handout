@@ -20,6 +20,7 @@ class VerifiedAPI(generics.GenericAPIView):
         if user.exists():
             user = User.objects.get(phone=request.data['phone'])
             serializer = self.get_serializer(user)
+            token, created = Token.objects.get_or_create(user=user)
             otp = OTP.objects.filter(user=user).last()
             if otp.number_error_3time >= 3:
                 if otp.exp_time_error_verified > timezone.now():
@@ -33,7 +34,7 @@ class VerifiedAPI(generics.GenericAPIView):
                     if otp.code == request.data['code']:
                         user.is_active = True
                         user.save()
-                        context = (serializer.data)
+                        context = (token.key, serializer.data)
                         return(Response(context, status=status.HTTP_200_OK))
                     else:
                         otp.number_error_3time = otp.number_error_3time + 1

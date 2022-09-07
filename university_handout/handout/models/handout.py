@@ -1,6 +1,5 @@
 import uuid
 import os
-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -8,9 +7,10 @@ from handout.models.category import Category
 from handout.models.course import Course
 from handout.models.professor import Professor
 from handout.models .university import University
+from handout.manager import CustomManager
 
 
-def get_file_path(filename):
+def get_file_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = "%s.%s" % (str(uuid.uuid4())[:8], ext)
     return os.path.join('storage/handout', filename)
@@ -19,12 +19,15 @@ def get_file_path(filename):
 class Handout(models.Model):
     category = models.ForeignKey(
         Category,
+        related_name=('category'),
         verbose_name=_('Category'),
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE
+        )
     course = models.ForeignKey(
         Course,
         verbose_name=_('Course'),
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE
+        )
     file = models.FileField(
         _('File'),
         upload_to=get_file_path)
@@ -65,9 +68,12 @@ class Handout(models.Model):
 
     is_processed = models.BooleanField(_('Is Processed'), default=False)
 
+    objects = CustomManager()
+
+
     class Meta:
-        verbose_name = _('Handout')
-        verbose_name_plural = _('Handouts')
+        verbose_name = _('handout')
+        verbose_name_plural = _('handouts')
         ordering = ('-upload_datetime',)
 
     def __str__(self):
@@ -98,5 +104,4 @@ class Handout(models.Model):
                 self.description = description + '\n' + self.description
             else:
                 self.description = description
-
         return super(Handout, self).save(*args, **kwargs)

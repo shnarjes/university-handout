@@ -1,4 +1,3 @@
-from os import minor
 from django.test import TestCase
 
 from handout.models.category import Category
@@ -26,7 +25,7 @@ class MajorTest(TestCase):
 
     def setUp(self):
         return Major.objects.create(
-            title = 'title1'
+            title='title1'
         )
 
     def test_major_creation(self):
@@ -39,7 +38,7 @@ class MinorTest(TestCase):
 
     def setUp(self):
         major = Major.objects.create(
-            title = 'title1'
+            title='title1'
         )
         return Minor.objects.create(
             major=major,
@@ -52,12 +51,11 @@ class MinorTest(TestCase):
         self.assertEqual(minor.__str__(), minor.title)
 
 
-
 class CourseTest(TestCase):
 
     def setUp(self):
         major = Major.objects.create(
-            title = 'title1'
+            title='title1'
         )
         minor = Minor.objects.create(
             major=major,
@@ -107,8 +105,8 @@ class UniversityTest(TestCase):
             title='sku'
         )
         return University.objects.create(
-            name = 'shsku',
-            type = type
+            name='shsku',
+            type=type
         )
 
     def test_uni_creation(self):
@@ -124,7 +122,7 @@ class HandoutTest(TestCase):
             title='title1'
         )
         major = Major.objects.create(
-            title = 'title1'
+            title='title1'
         )
         minor = Minor.objects.create(
             major=major,
@@ -135,12 +133,12 @@ class HandoutTest(TestCase):
             title='title3'
         )
         return Handout.objects.create(
-            title = 'titlehandout',
-            category = cat,
-            course = course,
-            file = get_file_path('file1'),
+            title='titlehandout',
+            category=cat,
+            course=course,
+            file=get_file_path(self, 'file1'),
         )
-    
+
     def test_handout_creation(self):
         cat = Category.objects.get(title='title1')
         handout = Handout.objects.get(category=cat)
