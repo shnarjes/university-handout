@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-07 12:54+0430\n"
+"PO-Revision-Date: 2022-09-07 12:55+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: handout/models/category.py:6 handout/models/course.py:12
+#: handout/models/handout.py:61 handout/models/major_minor.py:6
+#: handout/models/major_minor.py:22 handout/models/professor.py:17
+#: handout/models/university.py:8
+msgid "Title"
+msgstr "عنوان"
+
+#: handout/models/category.py:8 handout/models/course.py:14
+#: handout/models/handout.py:67 handout/models/university.py:22
+msgid "Logo"
+msgstr "لوگو"
+
+#: handout/models/category.py:11
+msgid "category"
+msgstr "دسته بندی"
+
+#: handout/models/category.py:12
+msgid "categorys"
+msgstr "دسته بندی ها"
+
+#: handout/models/course.py:10 handout/models/major_minor.py:25
+msgid "Minor"
+msgstr "گرایش"
+
+#: handout/models/course.py:17
+msgid "course"
+msgstr "درس"
+
+#: handout/models/course.py:18
+msgid "courses"
+msgstr "درس ها"
+
+#: handout/models/handout.py:23
+msgid "Category"
+msgstr "دسته بندی"
+
+#: handout/models/handout.py:28
+msgid "Course"
+msgstr "درس"
+
+#: handout/models/handout.py:32
+msgid "File"
+msgstr "فایل"
+
+#: handout/models/handout.py:34
+msgid "Year"
+msgstr "سال"
+
+#: handout/models/handout.py:37 handout/models/professor.py:21
+msgid "Professor"
+msgstr "استاد"
+
+#: handout/models/handout.py:43 handout/models/university.py:29
+msgid "University"
+msgstr "دانشگاه"
+
+#: handout/models/handout.py:49
+msgid "Author"
+msgstr "نویسنده"
+
+#: handout/models/handout.py:55
+msgid "Description"
+msgstr "توضیحات"
+
+#: handout/models/handout.py:59
+msgid "Upload Datetime"
+msgstr "زمان بارگزاری"
+
+#: handout/models/handout.py:63
+msgid "Add Datetime"
+msgstr "زمان ثبت اطلاعات"
+
+#: handout/models/handout.py:64
+msgid "Modify Datetime"
+msgstr "زمان تغییر اطلاعات"
+
+#: handout/models/handout.py:69
+msgid "Is Processed"
+msgstr "تکمیل شده"
+
+#: handout/models/handout.py:75
+msgid "handout"
+msgstr "جزوه"
+
+#: handout/models/handout.py:76
+msgid "handouts"
+msgstr "جزوه ها"
+
+#: handout/models/major_minor.py:9 handout/models/major_minor.py:20
+msgid "Major"
+msgstr "رشته"
+
+#: handout/models/major_minor.py:10
+msgid "Majors"
+msgstr "رشته ها"
+
+#: handout/models/major_minor.py:26
+msgid "Minors"
+msgstr "گرایش ها"
+
+#: handout/models/professor.py:6 handout/models/university.py:20
+msgid "Name"
+msgstr "نام"
+
+#: handout/models/professor.py:8
+msgid "Picture"
+msgstr "تصویر"
+
+#: handout/models/professor.py:22
+msgid "Professors"
+msgstr "استادان"
+
+#: handout/models/university.py:11
+msgid "University Type"
+msgstr "نوع دانشگاه"
+
+#: handout/models/university.py:12
+msgid "Universitie Types"
+msgstr "انواع دانشگاه ها"
+
+#: handout/models/university.py:24
+msgid "Type"
+msgstr "نوع"
+
+#: handout/models/university.py:30
+msgid "Universities"
+msgstr "دانشگاه ها"
+
+#: handout/serializers.py:33
+msgid "date"
+msgstr "تاریخ"
+
+#: handout/serializers.py:36
+msgid "date time"
+msgstr "تاریخ و ساعت"
+
+#: university_handout/settings/base.py:91
+msgid "Farsi"
+msgstr "فارسی"
+
+#: user/models/otp.py:7
+msgid "REGISTER"
+msgstr "ثبت نام"
+
+#: user/models/otp.py:8
+msgid "LOGIN"
+msgstr "ورود"
+
+#: user/models/otp.py:14 user/models/otp.py:15
+msgid "code"
+msgstr "کد امنیتی"
+
+#: user/models/otp.py:19
+msgid "exp_time"
+msgstr "زمان اتمام ۳ ثانیه"
+
+#: user/models/otp.py:20
+msgid "Time out"
+msgstr "زمان اتمام ۳ ثانیه"
+
+#: user/models/otp.py:23
+msgid "exp_time_error_send"
+msgstr "زمان ارسال دوباره کد امنیتی"
+
+#: user/models/otp.py:24
+msgid "Time to resend the code"
+msgstr "زمان ارسال دوباره کد امنیتی"
+
+#: user/models/otp.py:29
+msgid "exp_time_error_verified"
+msgstr "زمان تایید دوباره کد امنیتی"
+
+#: user/models/otp.py:30
+msgid "Time to code confirmation"
+msgstr "زمان تایید دوباره کد امنیتی"
+
+#: user/models/otp.py:38 user/models/otp.py:39 user/models/user.py:23
+msgid "user"
+msgstr "کاربر"
+
+#: user/models/otp.py:42
+msgid "number_error_3time"
+msgstr "تعداد دفعات وارد کردن کدامنیتی"
+
+#: user/models/otp.py:43
+msgid "number of time enter the code"
+msgstr "تعداد دفعات وارد کردن کدامنیتی"
+
+#: user/models/otp.py:48
+msgid "number_error_5time"
+msgstr "تعداد دفعات ارسال کد امنیتی"
+
+#: user/models/otp.py:49
+msgid "number of time send the code"
+msgstr "تعداد دفعات ارسال کد امنیتی"
+
+#: user/models/otp.py:55 user/models/otp.py:56
+msgid "type"
+msgstr "نوع"
+
+#: user/models/user.py:10
+msgid "Phone"
+msgstr "شماره تلفن"
+
+#: user/models/user.py:14
+msgid "email address"
+msgstr "آدرس ایمیل"
+
+#: user/models/user.py:24
+msgid " users"
+msgstr "کاربرها"

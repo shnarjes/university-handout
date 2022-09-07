@@ -80,6 +80,3 @@ CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_TIMEZONE = 'Asia/Tehran'
 CELERY_ALWAYS_EAGER = True
 BROKER_BACKEND = 'memory'
-
-
-

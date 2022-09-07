@@ -1,9 +1,8 @@
 from django.db import models
 
 
-
 class CustomManager(models.Manager):
-    
+
     def handouts_select_related(self):
         return self.get_queryset().select_related(
             'category',
@@ -11,6 +10,6 @@ class CustomManager(models.Manager):
             'professor',
             'university'
         ).all()
-    
+
     def university_select_related(self):
         return self.get_queryset().select_related('type',).all()

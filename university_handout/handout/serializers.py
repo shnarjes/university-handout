@@ -9,7 +9,6 @@ from handout.models.professor import Professor
 from handout.models.university import University
 
 
-
 class HandoutSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -27,14 +26,14 @@ class HandoutSerializer(serializers.ModelSerializer):
             'logo',
             'is_processed'
             )
-    
+
     def __init__(self, *args, **kwargs):
         super(HandoutSerializer, self).__init__(*args, **kwargs)
         self.fields['date'] = JalaliDateField(label=_('date'),
-            widget=AdminJalaliDateWidget 
+            widget=AdminJalaliDateWidget
         )
         self.fields['date_time'] = SplitJalaliDateTimeField(label=_('date time'), 
-            widget=AdminSplitJalaliDateTime 
+            widget=AdminSplitJalaliDateTime
         )
 
 

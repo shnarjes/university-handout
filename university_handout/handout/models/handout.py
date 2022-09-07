@@ -70,7 +70,6 @@ class Handout(models.Model):
 
     objects = CustomManager()
 
-
     class Meta:
         verbose_name = _('handout')
         verbose_name_plural = _('handouts')

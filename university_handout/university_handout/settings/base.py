@@ -1,8 +1,13 @@
+from django.utils.translation import gettext_lazy as _
 from decouple import config
+from pathlib import Path
+import os
 
 if config('DEBUG', cast=bool):
     import mimetypes
     mimetypes.add_type("application/javascript", ".js", True)
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -13,8 +18,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    'django.middleware.locale.LocaleMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',
 ]
+
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -67,6 +73,10 @@ AUTH_PASSWORD_VALIDATORS = [
 #    INTERNATIONALIZATION    #
 ##############################
 
+
+SITE_ROOT = os.path.dirname(os.path.realpath(__name__))
+LOCALE_PATHS = (os.path.join(SITE_ROOT, 'locale'),)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -77,10 +87,14 @@ USE_TZ = True
 
 LANGUAGE_CODE = 'fa'
 
-LANGUAGES = ( ('fa', 'Farsi'), ('en', 'English') )
+LANGUAGES = (
+    ('fa', _('Farsi')),
+)
 
-body = gettext_lazy("I \u2764 Django")  # (Unicode :heart:)
-requests.post('https://example.com/send', data={'body': body})
+# LOCALE_PATHS = [
+#     BASE_DIR / 'locale/',
+# ]
+
 
 ################
 #    STATIC    #
