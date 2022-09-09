@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-07 12:54+0430\n"
-"PO-Revision-Date: 2022-09-07 12:55+0430\n"
+"POT-Creation-Date: 2022-09-09 17:26+0430\n"
+"PO-Revision-Date: 2022-09-09 17:27+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.1.1\n"
+
+#: handout/admin/handout_admin.py:61
+msgid "add_time"
+msgstr "  زمان ثبت اطلاعات"
 
 #: handout/models/category.py:6 handout/models/course.py:12
 #: handout/models/handout.py:61 handout/models/major_minor.py:6
@@ -98,11 +102,11 @@ msgstr "زمان تغییر اطلاعات"
 msgid "Is Processed"
 msgstr "تکمیل شده"
 
-#: handout/models/handout.py:75
+#: handout/models/handout.py:74
 msgid "handout"
 msgstr "جزوه"
 
-#: handout/models/handout.py:76
+#: handout/models/handout.py:75
 msgid "handouts"
 msgstr "جزوه ها"
 
@@ -145,14 +149,6 @@ msgstr "نوع"
 #: handout/models/university.py:30
 msgid "Universities"
 msgstr "دانشگاه ها"
-
-#: handout/serializers.py:33
-msgid "date"
-msgstr "تاریخ"
-
-#: handout/serializers.py:36
-msgid "date time"
-msgstr "تاریخ و ساعت"
 
 #: university_handout/settings/base.py:91
 msgid "Farsi"
@@ -229,3 +225,6 @@ msgstr "آدرس ایمیل"
 #: user/models/user.py:24
 msgid " users"
 msgstr "کاربرها"
+
+#~ msgid "date"
+#~ msgstr "تاریخ"

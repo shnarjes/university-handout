@@ -85,8 +85,10 @@ class Handout(models.Model):
             self.title = '{} {}'.format(self.category.title, self.course.title)
 
             if self.professor:
-                self.title += '  {} {}'.format(self.professor.title,
-                                              self.professor.name)
+                self.title += '  {} {}'.format(
+                    self.professor.title,
+                    self.professor.name
+                )
                 description += '{} {}'.format(
                     self.professor.title, self.professor.name)
 

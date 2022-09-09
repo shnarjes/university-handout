@@ -1,7 +1,4 @@
 from rest_framework import serializers
-from jalali_date.fields import JalaliDateField, SplitJalaliDateTimeField
-from jalali_date.widgets import AdminJalaliDateWidget, AdminSplitJalaliDateTime
-from django.utils.translation import gettext_lazy as _
 
 from handout.models.handout import Handout
 from handout.models.category import Category
@@ -26,15 +23,6 @@ class HandoutSerializer(serializers.ModelSerializer):
             'logo',
             'is_processed'
             )
-
-    def __init__(self, *args, **kwargs):
-        super(HandoutSerializer, self).__init__(*args, **kwargs)
-        self.fields['date'] = JalaliDateField(label=_('date'),
-            widget=AdminJalaliDateWidget
-        )
-        self.fields['date_time'] = SplitJalaliDateTimeField(label=_('date time'), 
-            widget=AdminSplitJalaliDateTime
-        )
 
 
 class CategorySerializer(serializers.ModelSerializer):
