@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-09 17:26+0430\n"
-"PO-Revision-Date: 2022-09-09 17:27+0430\n"
+"POT-Creation-Date: 2022-09-10 12:36+0430\n"
+"PO-Revision-Date: 2022-09-10 12:37+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: handout/admin/handout_admin.py:61
-msgid "add_time"
+#: handout/admin/handout_admin.py:59
+msgid "add time"
 msgstr "  زمان ثبت اطلاعات"
 
 #: handout/models/category.py:6 handout/models/course.py:12

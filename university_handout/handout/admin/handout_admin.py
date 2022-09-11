@@ -56,7 +56,7 @@ class Handoutadmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     )
     list_per_page = 20
 
-    @admin.display(description=_('add_time'), ordering='created')
+    @admin.display(description=_('add time'), ordering='add_datetime')
     def get_created_jalali(self, obj):
 
         return datetime2jalali(obj.add_datetime).strftime('%y/%m/%d _ %H:%M:%S')
