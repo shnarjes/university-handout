@@ -1,5 +1,6 @@
 /venv/
 **/__pycache__/
+*.mo
 .env
 data.json
 erlang-solutions_1.0_all.deb
