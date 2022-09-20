@@ -6,25 +6,6 @@ from handout.models.professor import Professor
 from handout.models.university import University
 
 
-class HandoutSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Handout
-        fields = (
-            'category',
-            'course',
-            'file',
-            'year',
-            'professor',
-            'university',
-            'author',
-            'description',
-            'title',
-            'logo',
-            'is_processed'
-            )
-
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -43,25 +24,39 @@ class UniversitySerializer(serializers.ModelSerializer):
         fields = ('name', 'logo', 'type')
 
 
-# class MajorSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Major
-#         fields = ('title')
+class HandoutSerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+    professor = ProfessorSerializer()
+    university = UniversitySerializer()
 
+    class Meta:
+        model = Handout
+        fields = (
+            'category',
+            'course',
+            'file',
+            'year',
+            'professor',
+            'university',
+            'author',
+            'description',
+            'title',
+            'logo',
+            'is_processed'
+            )
+    
 
-# class MinorSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Minor
-#         fields = ('title', 'major')
-
-
-# class CourseSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Course
-#         fields = ('title', 'logo', 'minor')
-
-
-# class TypeUniSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = UniversityType
-#         fields = ('title')
+    def create(self, validated_data):
+        cat_data = validated_data.pop('category')
+        professor_data = validated_data.pop('professor')
+        uni_data = validated_data.pop('university')
+        handout = Handout.objects.create(**validated_data)
+        for c in cat_data:
+            Category.objects.create(handout=handout, **c)
+        
+        for p in professor_data:
+            Professor.objects.create(handout=handout, **p)
+        
+        for u in uni_data:
+            University.objects.create(handout=handout, **u)
+        return handout
