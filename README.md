@@ -12,7 +12,7 @@ for linux
 
 **Install dependencies:**
 
-> pip install -r requirements.txt
+> pip install -r requirements.text
 
 **Make migrations:**
 
