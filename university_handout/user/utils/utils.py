@@ -16,7 +16,7 @@ STATUS_CHOICES = {
 @shared_task
 def send_sms_otp(mobile, token):
     try:
-        api = KavenegarAPI('5356454B5438394A397A396C6C5564504966785464413374456C7359723531354F344547627954597036553D')
+        api = KavenegarAPI()#Id be posted
         params = {
             'receptor': mobile,
             'template': 'verify',
